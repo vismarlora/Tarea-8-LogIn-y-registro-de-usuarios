@@ -1,0 +1,48 @@
+﻿<Window x:Class="Tarea8LogIn.UI.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tarea8LogIn.UI"
+        xmlns:PasswordHelper ="clr-namespace:Tarea8LogIn.Contraseña"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10">
+            <StackPanel Orientation="Vertical">
+                
+                <Label Content="Ingrese el Nombre de Usuario"/>
+                <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}"/>
+
+                <Label Content="Ingrese la Contraseña"/>
+                
+                <PasswordBox x:Name="ContrasenaPasswordBox" PasswordHelper:PasswordHelper.Attach="True" PasswordHelper:PasswordHelper.Password="{Binding Contrasena, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                
+                <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Left">
+                    
+                    <Button x:Name="IngresarButton" Click="IngresarButton_Click" Margin="10">
+                        
+                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                            
+                            <Label Content="Iniciar sesion"/>
+
+                            <Image Source="/Resources/enter_icon-icons.com_71207.png" />
+
+                        </StackPanel>
+                        
+                    </Button>
+                    <Button x:Name="CancelarButton" Click="CancelarButton_Click" Margin="10">
+                        
+                        <StackPanel Orientation="Horizontal">
+                            
+                            <Label Content="Cancelar"/>
+
+                            <Image Source="/Resources/Cancel_icon-icons.com_73703.png" />
+
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

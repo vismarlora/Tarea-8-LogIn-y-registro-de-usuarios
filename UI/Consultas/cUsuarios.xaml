@@ -1,0 +1,50 @@
+﻿<Window x:Class="Tarea8LogIn.UI.Consultas.cUsuarios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tarea8LogIn.UI.Consultas"
+        mc:Ignorable="d"
+        Title="Consulta de Usuarios" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,5,10,0">
+
+            <StackPanel Orientation="Horizontal" Height="58">
+                <StackPanel Margin="5,0">
+                    <Label Content="Filtro:" />
+                    <ComboBox x:Name="FiltroComboBox" Width="100">
+                        <ComboBoxItem Content="Listado"/>
+                    </ComboBox>
+                </StackPanel>
+
+                <Button x:Name="BuscarCButton" Margin="10" Height="30" Width="80" Click="BuscarCButton_Click" >
+                    <StackPanel Orientation="Horizontal" >
+
+                        <Image Source="/Resources/search_locate_find_6278.png" />
+
+                        <Label Content="Buscar" />
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left">
+
+                <DataGrid x:Name="DatosDataGrid" Height="240" Width="700" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        
+                        <DataGridTextColumn Header="Usuario Id" Binding="{Binding UsuarioId}"/>
+                        
+                        <DataGridTextColumn Header="Nombres" Binding="{Binding Nombres}"/>
+                        
+                        <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}"/>
+                        
+                        <DataGridTextColumn Header="Nombre de Usuario" Binding="{Binding NombreUsuario}"/>
+                        
+                        <DataGridTextColumn Header="Contraseña" Binding="{Binding Contrasena}"/>
+                        
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
